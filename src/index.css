@@ -5,9 +5,151 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(202, 86%, 94%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.my-app{
+  display: grid;
+  grid-template-columns: 450px 450px;
+  align-self: center;
+  justify-content: center;
+  margin-top: 2.8rem;
+}
+.my-app .mortgage{
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 8px 0 24px 12px;
+  
+}
+.my-app .result{
+  background-color:#333;
+  padding: 2.5rem;
+  border-radius: 0 12px 12px 36px;
+  
+}
+
+.mortgage .container{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+.mortgage .container button{
+  border: none;
+  background-color: white;
+  color: hsl(59, 56%, 62%);
+  cursor: pointer;
+  font-weight: 500;
+  height: 2.4rem;
+  margin-top: 16px;
+}
+.mortgage .container button:hover{
+  text-decoration: underline;
+}
+.mortgage .form label{
+  color: hsl(203, 41%, 42%);
+}
+.form{
+  display: grid;
+  grid-template-columns: auto;
+  gap: 12px;
+}
+.form .rate-term{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap:12px
+}
+.form .rate-term .rate, .form .rate-term .term{
+  display: grid;
+  grid-template-columns: auto;
+  gap: 12px;
+}
+
+.form input {
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid hsl(59, 56%, 62%);
+}
+.form button{
+  background-color: hsl(59, 56%, 62%);
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.result .result-summary p{
+  color: white;
+}
+.result .result-summary h1{
+  color: whitesmoke;
+}
+.result .result-amount{
+  color: white;
+  border-top: 2px solid hsl(59, 56%, 62%);
+  border-radius: 12px;
+  background-color: black;
+}
+.form span{
+  margin-top: 0;
+  font-size: 11px;
+  color: red;
+}
+@media (max-width: 900px){
+  .my-app{
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 375px){
+  .my-app{
+    grid-template-columns: 350px;
+  }
+
+  .form .rate-term{
+    display: grid;
+    grid-template-columns: auto;
+    gap:12px
+  }
+}
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+> 💡 These are just the design sizes. Ensure content is responsive and meets WCAG requirements by testing the full range of screen sizes from 320px to large screens.
+
+## Colors
+
+### Primary
+
+- Lime: hsl(61, 70%, 52%)
+- Red: hsl(4, 69%, 50%)
+
+### Neutral
+
+- White: hsl(0, 0%, 100%)
+- Slate 100: hsl(202, 86%, 94%)
+- Slate 300: hsl(203, 41%, 72%)
+- Slate 500: hsl(200, 26%, 54%)
+- Slate 700: hsl(200, 24%, 40%)
+- Slate 900: hsl(202, 55%, 16%)
+
+## Typography
+
+### Body Copy
+
+- Font size (paragraph): 16px 
+
+### Font
+
+- Family: [Plus Jakarta Sans](https://fonts.google.com/specimen/Plus+Jakarta+Sans)
+- Weights: 500, 700
+
+> 💎 [Upgrade to Pro](https://www.frontendmentor.io/pro?ref=style-guide) for design file access to see all design details and get hands-on experience using a professional workflow with tools like Figma. The design file for this challenge also includes a design system and tablet layout to help you build a more accurate solution faster. */

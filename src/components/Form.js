@@ -1,8 +1,15 @@
 import Button from "./Button";
 import Input from "./Input";
 
-export default function Form({ setMortgageDetails, mortgageDetails, errors, setErrors, onHandleClick }) {
-  
+export default function Form({
+  setMortgageDetails,
+  mortgageDetails,
+  errors,
+  setErrors,
+  onHandleClick,
+  onHandleRepayment,
+  setMonthRepay
+}) {
   function validateInput() {
     const error = {};
     if (!mortgageDetails.amount) {
@@ -11,8 +18,8 @@ export default function Form({ setMortgageDetails, mortgageDetails, errors, setE
     if (!mortgageDetails.type) {
       error.type = "You must choose between the types";
     }
-    if(!mortgageDetails.term){
-      error.term = "Term field must not be empty"
+    if (!mortgageDetails.term) {
+      error.term = "Term field must not be empty";
     }
     if (!mortgageDetails.rate) {
       error.rate = "rate field must not be empty";
@@ -22,12 +29,12 @@ export default function Form({ setMortgageDetails, mortgageDetails, errors, setE
   function handleSubmit(e) {
     e.preventDefault();
     const validate = validateInput();
-    if((Object.keys(validate)).length>0) {
-      setErrors(validate)
-      return
+    if (Object.keys(validate).length > 0) {
+      setErrors(validate);
+      return;
     }
-    console.log(Number(mortgageDetails.rate))
-    onHandleClick()
+    onHandleClick();
+    onHandleRepayment();
   }
   return (
     <form className="form" onSubmit={handleSubmit}>

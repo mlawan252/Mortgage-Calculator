@@ -91,6 +91,7 @@ code {
   border-top: 2px solid hsl(59, 56%, 62%);
   border-radius: 12px;
   background-color: black;
+  min-height: 250px;
 }
 .form span{
   margin-top: 0;
